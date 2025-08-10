@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Footer Example</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#60a5fa;
+      --accent-2:#7c3aed;
+      --maxw:1100px;
+      --gap:18px;
+    }
+
+    /* Basic reset */
+    *,*::before,*::after{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif; margin:0; background:linear-gradient(180deg,#0b1220 0%, #071023 100%); color:#e6eef8; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+
+    .site{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    main{flex:1; padding:48px 20px; max-width:var(--maxw); margin:0 auto}
+    h1{margin:0 0 16px; font-size:20px}
+
+    /* FOOTER */
+    footer{
+      background:linear-gradient(180deg,var(--card), rgba(10,16,28,0.9));
+      color:var(--muted);
+      padding:48px 20px;
+    }
+
+    .footer-inner{
+      max-width:var(--maxw);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap:var(--gap);
+      align-items:start;
+    }
+
+    /* Brand column */
+    .brand{
+      color:#fff;
+    }
+    .brand .logo{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-bottom:12px;
+    }
+    .logo .mark{
+      width:44px;height:44px;border-radius:8px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:inline-grid;place-items:center;font-weight:700;color:white;
+      box-shadow:0 6px 18px rgba(96,165,250,0.12);
+    }
+    .brand p{color:var(--muted); margin:6px 0 12px; line-height:1.5}
+    .socials{display:flex; gap:10px; margin-top:6px}
+    .socials a{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.03);
+      color:var(--muted); text-decoration:none; font-weight:600;
+      transition:transform .15s ease, background .15s;
+    }
+    .socials a:hover{transform:translateY(-3px); background:rgba(255,255,255,0.06); color:#fff}
+
+    /* Links columns */
+    .links{display:flex; gap:24px}
+    .col h3{color:#fff; font-size:15px; margin-bottom:12px}
+    .col ul{list-style:none; padding:0; margin:0}
+    .col li{margin:6px 0}
+    .col a{color:var(--muted); text-decoration:none; font-size:14px}
+    .col a:hover{color:var(--accent)}
+
+    /* Newsletter */
+    .newsletter h3{color:#fff; margin-bottom:8px}
+    .newsletter p{color:var(--muted); font-size:14px; margin-bottom:12px}
+    .subscribe{
+      display:flex;
+      gap:8px;
+      max-width:360px;
+    }
+    .subscribe input{
+      flex:1; padding:10px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.04);
+      background:transparent; color:var(--muted); outline:none;
+    }
+    .subscribe button{
+      padding:10px 14px; border-radius:8px; border:none; cursor:pointer;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:white;
+      font-weight:600;
+    }
+
+    /* bottom row */
+    .footer-bottom{
+      max-width:var(--maxw); margin:22px auto 0; padding-top:20px; border-top:1px solid rgba(255,255,255,0.03);
+      display:flex; justify-content:space-between; gap:16px; align-items:center; flex-wrap:wrap;
+      color:var(--muted); font-size:13px;
+    }
+    .policies{display:flex; gap:12px; align-items:center}
+    .policies a{color:var(--muted); text-decoration:none}
+    .policies a:hover{color:var(--accent)}
+
+    /* small screens */
+    @media (max-width:880px){
+      .footer-inner{grid-template-columns:1fr; }
+      .links{flex-direction:row; gap:18px; flex-wrap:wrap}
+      .newsletter{margin-top:8px}
+    }
+
+    @media (max-width:420px){
+      .subscribe{flex-direction:column}
+      .subscribe button{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <main>
+      <h1>Page Content Above Footer</h1>
+      <p>Use this area to preview the footer on any page. Scroll down to see the footer.</p>
+    </main>
+
+    <footer aria-label="Site footer">
+      <div class="footer-inner">
+        <!-- Brand / About -->
+        <div class="brand" aria-labelledby="brand-heading">
+          <div class="logo">
+            <div class="mark" aria-hidden="true">AI</div>
+            <div>
+              <div style="font-weight:700; font-size:16px; color:white">Your Brand</div>
+              <div style="font-size:13px; color:var(--muted)">Delicious treats & smile-serving since 2010</div>
+            </div>
+          </div>
+          <p>We serve handcrafted ice creams with fresh ingredients. Visit us or order online — we love seeing your happy faces!</p>
+
+          <div class="socials" aria-label="Social links">
+            <a href="#" title="Instagram" aria-label="Instagram">IG</a>
+            <a href="#" title="Facebook" aria-label="Facebook">FB</a>
+            <a href="#" title="Twitter" aria-label="Twitter">TW</a>
+            <a href="#" title="WhatsApp" aria-label="WhatsApp">WA</a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="links" role="navigation" aria-label="Footer navigation">
+          <div class="col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Menu</a></li>
+              <li><a href="#">Deals</a></li>
+              <li><a href="#">Order Online</a></li>
+              <li><a href="#">Locations</a></li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <h3>Help</h3>
+            <ul>
+              <li><a href="#">Customer Service</a></li>
+              <li><a href="#">Delivery Info</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter" aria-labelledby="newsletter-heading">
+          <h3 id="newsletter-heading">Join our scoop club</h3>
+          <p>Get weekly offers and seasonal flavors — no spam, just sweet updates.</p>
+
+          <form class="subscribe" id="subscribeForm" onsubmit="return subscribe(event)" novalidate>
+            <label for="email" class="sr-only" style="position:absolute;left:-9999px">Email</label>
+            <input id="email" type="email" placeholder="you@example.com" aria-label="Email address" required />
+            <button type="submit">Subscribe</button>
+          </form>
+
+          <div id="msg" role="status" aria-live="polite" style="margin-top:10px;font-size:13px;color:var(--muted)"></div>
+        </div>
+      </div>
+
+      <div class="footer-bottom" role="contentinfo">
+        <div>© <span id="year"></span> Your Brand. All rights reserved.</div>
+        <div class="policies">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // small JS: year + simple "subscribe" feedback
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function subscribe(e){
+      e.preventDefault();
+      const email = document.getElementById('email');
+      const msg = document.getElementById('msg');
+      if(!email.checkValidity()){
+        msg.textContent = 'Please enter a valid email address.';
+        email.focus();
+        return false;
+      }
+      // pretend to subscribe (replace with real API call)
+      msg.textContent = 'Thanks! You are now subscribed.';
+      email.value = '';
+      setTimeout(()=> msg.textContent = '', 5000);
+      return false;
+    }
+  </script>
+</body>
+</html>
